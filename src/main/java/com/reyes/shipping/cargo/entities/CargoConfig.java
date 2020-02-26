@@ -1,20 +1,43 @@
-package com.reyes.shipping.modelos;
+package com.reyes.shipping.cargo.entities;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.persistence.Embeddable;
 
+@Embeddable
+public class CargoConfig implements InitializingBean, DisposableBean {
 
-public class Orden implements InitializingBean, DisposableBean {
-    int id;
-    String datos;
+    float pricePërTon;
+    float maxWeight;
+
+    public CargoConfig(float pricePërTon, float maxWeight) {
+        this.pricePërTon = pricePërTon;
+        this.maxWeight = maxWeight;
+    }
+
+    public float getPricePërTon() {
+        return pricePërTon;
+    }
+
+    public void setPricePërTon(float pricePërTon) {
+        this.pricePërTon = pricePërTon;
+    }
+
+    public float getMaxWeight() {
+        return maxWeight;
+    }
+
+    public void setMaxWeight(float maxWeight) {
+        this.maxWeight = maxWeight;
+    }
 
     //JSR-250 annotations - BEST PRACTICE//
     @PostConstruct
     public void init() {
+//        this.pricePërTon = 5;
         System.out.println("init con annotation");
     }
 
@@ -41,30 +64,6 @@ public class Orden implements InitializingBean, DisposableBean {
     @Override
     public void destroy() throws Exception {
         System.out.println("destroy con interfaz");
-    }
-
-    public Orden() {
-    }
-
-    public Orden(int id, String datos) {
-        this.id = id;
-        this.datos = datos;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getDatos() {
-        return datos;
-    }
-
-    public void setDatos(String datos) {
-        this.datos = datos;
     }
 
 }
