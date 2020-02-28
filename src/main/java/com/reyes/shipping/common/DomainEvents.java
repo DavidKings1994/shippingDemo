@@ -1,7 +1,5 @@
 package com.reyes.shipping.common;
 
-import org.reflections.Reflections;
-import org.reflections.scanners.SubTypesScanner;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.InvocationTargetException;
@@ -14,12 +12,12 @@ public final class DomainEvents {
 
     private static Set<Class<? extends Handler>> handlers;
 
-    public DomainEvents() {
-        if (handlers == null) {
-            Reflections reflections = new Reflections("com.kings", new SubTypesScanner());
-            handlers = reflections.getSubTypesOf(Handler.class);
-        }
-    }
+//    public DomainEvents() {
+//        if (handlers == null) {
+//            Reflections reflections = new Reflections("com.kings", new SubTypesScanner());
+//            handlers = reflections.getSubTypesOf(Handler.class);
+//        }
+//    }
 
     public void dispatch(DomainEvent domainEvent) {
         handlers.forEach(handle -> {
