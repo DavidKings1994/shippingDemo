@@ -1,8 +1,8 @@
 package com.reyes.shipping.entities;
 
-import com.reyes.shipping.cargo.entities.Cargo;
-import com.reyes.shipping.cargo.entities.CargoConfig;
-import com.reyes.shipping.cargo.entities.CargoJPARepository;
+import com.reyes.shipping.cargoDomain.aggregates.Cargo;
+import com.reyes.shipping.cargoDomain.entities.CargoConfig;
+import com.reyes.shipping.cargoDomain.domainServices.CargoJPARepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -32,7 +32,7 @@ class CargoTest {
 
     @Test
     public void ciclo_de_vida_del_bean() {
-        Cargo cargo = cargoJPARepository.findById(1).orElse(null);
+        Cargo cargo = cargoJPARepository.findById(1L).orElse(null);
 
         Assertions.assertNotNull(cargo, "No se encontro registro");
         Assertions.assertEquals(1000, cargo.getWeight() * cargoConfig.getPricePërTon(), cargo.getWeight() + "* 10 = 1000" );

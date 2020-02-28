@@ -1,4 +1,4 @@
-package com.reyes.shipping.cargo.entities;
+package com.reyes.shipping.cargoDomain.entities;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;

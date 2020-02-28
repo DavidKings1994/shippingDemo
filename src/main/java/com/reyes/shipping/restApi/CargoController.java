@@ -1,7 +1,7 @@
 package com.reyes.shipping.restApi;
 
-import com.reyes.shipping.cargo.entities.Cargo;
-import com.reyes.shipping.cargo.entities.CargoJPARepository;
+import com.reyes.shipping.cargoDomain.aggregates.Cargo;
+import com.reyes.shipping.cargoDomain.domainServices.CargoJPARepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;

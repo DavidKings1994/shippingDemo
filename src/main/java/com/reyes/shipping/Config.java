@@ -1,6 +1,6 @@
 package com.reyes.shipping;
 
-import com.reyes.shipping.cargo.entities.CargoConfig;
+import com.reyes.shipping.cargoDomain.entities.CargoConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
