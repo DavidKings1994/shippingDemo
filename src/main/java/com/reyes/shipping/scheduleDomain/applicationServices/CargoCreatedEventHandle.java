@@ -10,7 +10,7 @@ public class CargoCreatedEventHandle implements ApplicationListener<CargoCreated
 
     @Override
     public void onApplicationEvent(CargoCreatedEvent event) {
-        System.out.println("Cargo created");
-        System.out.println("Cargo weight: " + ((Cargo)event.getSource()).getWeight());
+//        System.out.println("Cargo created");
+//        System.out.println("Cargo weight: " + ((Cargo)event.getSource()).getWeight());
     }
 }

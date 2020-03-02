@@ -36,36 +36,36 @@ public class CargoConfig implements InitializingBean, DisposableBean {
     @PostConstruct
     public void init() {
 //        this.pricePërTon = 5;
-        System.out.println("init con annotation");
+//        System.out.println("init con annotation");
     }
 
     @PreDestroy
     public void _destroy() {
-        System.out.println("destroy con annotation");
+//        System.out.println("destroy con annotation");
     }
 
     //CUSTOM - SEGUNDA OPCION//
     public void myInit() {
-        System.out.println("init custom");
+//        System.out.println("init custom");
     }
 
     public void myDestroy() {
-        System.out.println("destroy custom");
+//        System.out.println("destroy custom");
     }
 
     public void myOtherDestroy() {
-        System.out.println("destroy custom 2");
+//        System.out.println("destroy custom 2");
     }
 
     //INTERFACES - MALA IDEA//
     @Override
     public void afterPropertiesSet() throws Exception {
-        System.out.println("init con interfaz");
+//        System.out.println("init con interfaz");
     }
 
     @Override
     public void destroy() throws Exception {
-        System.out.println("destroy con interfaz");
+//        System.out.println("destroy con interfaz");
     }
 
 }

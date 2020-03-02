@@ -2,14 +2,18 @@ package com.reyes.shipping.common;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Transient;
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AggregateRoot extends Entity {
 
     @Autowired
+    @Transient
     private DomainEventPublisher<DomainEvent> eventPublisher;
 
+    @Transient
     private List<DomainEvent> domainEvents;
 
     public AggregateRoot() {

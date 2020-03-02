@@ -55,6 +55,7 @@ class CargoTest {
         cargo.addDomainEvent(new CargoCreatedEvent(cargo));
         repository.save(cargo);
 
+
         Assertions.assertEquals(0, cargo.getDomainEvents().size(), "No se publicaron los eventos");
     }
 
