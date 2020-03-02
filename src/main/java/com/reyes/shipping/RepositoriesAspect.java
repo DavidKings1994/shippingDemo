@@ -10,7 +10,8 @@ public class RepositoriesAspect {
 
     @After("bean(*Repository) && !bean(*JPARepository)")
     public void dispatch() {
-        System.out.println("aspect executed");
+//        System.out.println("aspect executed");
+
     }
 
 }

@@ -12,4 +12,13 @@ public class Config {
         return new CargoConfig(10, 100);
     }
 
+    @Bean
+    public static CustomBeanFactoryPostProcessor customerBeanFactoryPostProcessor() {
+        return new CustomBeanFactoryPostProcessor();
+    }
+
+    @Bean
+    public static CustomBeanPostProcessor customBeanPostProcessor() {
+        return new CustomBeanPostProcessor();
+    }
 }

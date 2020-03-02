@@ -11,7 +11,7 @@ import java.util.List;
 public class CargoRepository extends EntityRepository<Cargo> {
 
     @Autowired
-    CargoJPARepository cargoJPARepository;
+    private CargoJPARepository cargoJPARepository;
 
     @Override
     public void save(Cargo aggregateRoot) {

@@ -2,6 +2,8 @@ package com.reyes.shipping.restApi;
 
 import com.reyes.shipping.cargoDomain.aggregates.Cargo;
 import com.reyes.shipping.cargoDomain.domainServices.CargoJPARepository;
+import com.reyes.shipping.cargoDomain.domainServices.CargoRepository;
+import com.reyes.shipping.cargoDomain.events.CargoCreatedEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
@@ -18,18 +20,18 @@ import java.util.List;
 public class CargoController {
 
     @Autowired
-    private CargoJPARepository cargoJPARepository;
+    private CargoRepository repository;
 
     @GetMapping()
     public HttpEntity<List<Cargo>> getCargo() {
-        return ResponseEntity.ok(cargoJPARepository.findAll());
+        return ResponseEntity.ok(repository.getAll());
     }
 
     @PostMapping
     public HttpEntity createCargo() {
-        Cargo cargo = new Cargo();
-        cargo.setWeight(100);
-        cargoJPARepository.save(cargo);
+        Cargo cargo = new Cargo(1, 100);
+        cargo.addDomainEvent(new CargoCreatedEvent(cargo));
+        repository.save(cargo);
         return new ResponseEntity(HttpStatus.OK);
     }
 

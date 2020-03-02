@@ -5,9 +5,7 @@ import org.springframework.beans.factory.InitializingBean;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.persistence.Embeddable;
 
-@Embeddable
 public class CargoConfig implements InitializingBean, DisposableBean {
 
     float pricePërTon;
@@ -53,6 +51,10 @@ public class CargoConfig implements InitializingBean, DisposableBean {
 
     public void myDestroy() {
         System.out.println("destroy custom");
+    }
+
+    public void myOtherDestroy() {
+        System.out.println("destroy custom 2");
     }
 
     //INTERFACES - MALA IDEA//

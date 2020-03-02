@@ -1,9 +1,15 @@
 package com.reyes.shipping.common;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AggregateRoot extends Entity {
+
+    @Autowired
+    private DomainEventPublisher<DomainEvent> eventPublisher;
+
     private List<DomainEvent> domainEvents;
 
     public AggregateRoot() {
@@ -24,10 +30,11 @@ public abstract class AggregateRoot extends Entity {
     }
 
     public final List<DomainEvent> getDomainEvents() {
-        return domainEvents.subList(0, domainEvents.size() > 0 ? domainEvents.size() - 1 : 0);
+        return domainEvents;
     }
 
     public boolean isValid() {
         return true;
     }
+
 }

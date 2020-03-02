@@ -1,10 +1,12 @@
 package com.reyes.shipping.cargoDomain.aggregates;
 
+import com.reyes.shipping.JPAEventsListener;
 import com.reyes.shipping.common.AggregateRoot;
 
 import javax.persistence.*;
 
 @Entity
+@EntityListeners(JPAEventsListener.class)
 public class Cargo extends AggregateRoot {
 
     @Column
