@@ -11,6 +11,6 @@ import static java.util.Arrays.stream;
 public class CustomBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-//        beanFactory.getBeanDefinition("initializeCargoConfig").setDestroyMethodName("myOtherDestroy");
+        beanFactory.getBeanDefinition("initializeCargoConfig").setDestroyMethodName("myOtherDestroy");
     }
 }

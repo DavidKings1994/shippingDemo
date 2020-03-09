@@ -24,16 +24,6 @@ class CargoTest {
     @Autowired
     private CargoConfig cargoConfig;
 
-//    @Autowired
-//    public CargoTest(CargoConfig cargoConfig) {
-//        this.cargoConfig = cargoConfig;
-//    }
-
-//    @Autowired
-//    public void setCargoConfig(CargoConfig cargoConfig) {
-//        this.cargoConfig = cargoConfig;
-//    }
-
     @BeforeAll
     public void init() {
         Cargo cargo = new Cargo(0, 100);

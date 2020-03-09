@@ -11,7 +11,7 @@ public class DomainEventPublisher<T> {
     private ApplicationEventPublisher publisher;
 
     public void publish(T event) {
-        System.out.println("Publishing event " + event.getClass().getName());
+//        System.out.println("Publishing event " + event.getClass().getName());
         publisher.publishEvent(event);
     }
 

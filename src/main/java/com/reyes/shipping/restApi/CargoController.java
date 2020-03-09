@@ -19,8 +19,12 @@ import java.util.List;
 @RequestMapping("api/v1/shipping")
 public class CargoController {
 
-    @Autowired
     private CargoRepository repository;
+
+    @Autowired
+    public CargoController(CargoRepository repository) {
+        this.repository = repository;
+    }
 
     @GetMapping()
     public HttpEntity<List<Cargo>> getCargo() {
