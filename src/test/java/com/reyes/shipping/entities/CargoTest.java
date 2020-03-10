@@ -36,7 +36,7 @@ class CargoTest {
         Cargo cargo = repository.getById(1L);
 
         Assertions.assertNotNull(cargo, "No se encontro registro");
-        Assertions.assertEquals(1000, cargo.getWeight() * cargoConfig.getPricePërTon(), cargo.getWeight() + "* 10 = 1000" );
+        Assertions.assertEquals(1000, cargo.getWeight() * cargoConfig.getPricePerTon(), cargo.getWeight() + "* 10 = 1000" );
     }
 
     @Test
@@ -44,7 +44,6 @@ class CargoTest {
         Cargo cargo = new Cargo(0, 100);
         cargo.addDomainEvent(new CargoCreatedEvent(cargo));
         repository.save(cargo);
-
 
         Assertions.assertEquals(0, cargo.getDomainEvents().size(), "No se publicaron los eventos");
     }

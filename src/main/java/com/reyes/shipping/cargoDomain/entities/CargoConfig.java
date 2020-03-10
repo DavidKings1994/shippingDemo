@@ -8,20 +8,20 @@ import javax.annotation.PreDestroy;
 
 public class CargoConfig implements InitializingBean, DisposableBean {
 
-    float pricePërTon;
+    float pricePerTon;
     float maxWeight;
 
-    public CargoConfig(float pricePërTon, float maxWeight) {
-        this.pricePërTon = pricePërTon;
+    public CargoConfig(float pricePerTon, float maxWeight) {
+        this.pricePerTon = pricePerTon;
         this.maxWeight = maxWeight;
     }
 
-    public float getPricePërTon() {
-        return pricePërTon;
+    public float getPricePerTon() {
+        return pricePerTon;
     }
 
     public void setPricePërTon(float pricePërTon) {
-        this.pricePërTon = pricePërTon;
+        this.pricePerTon = pricePërTon;
     }
 
     public float getMaxWeight() {
