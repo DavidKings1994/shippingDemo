@@ -8,6 +8,7 @@ import com.reyes.shipping.scheduleDomain.valueObjects.DeliveryConfigSecondary;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,18 @@ import java.util.List;
 public class Config {
 
     @Bean
-    //@Primary
+
     DeliveryConfigInterface deliveryConfig() {
         return new DeliveryConfig();
     }
 
     @Bean
+    @Primary
+    //@Scope("prototype")
     DeliveryConfigInterface deliveryConfigSecondary() {
         DeliveryConfigSecondary config = new DeliveryConfigSecondary();
         config.setWorkStartTime("6:00");
+        System.out.println("Instance 1: " + config);
         return config;
     }
 

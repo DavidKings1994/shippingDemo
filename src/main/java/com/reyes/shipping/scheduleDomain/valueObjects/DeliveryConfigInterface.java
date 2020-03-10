@@ -10,6 +10,7 @@ public abstract class DeliveryConfigInterface {
     @Value("9:00")
     private String workStartTime;
 
+    @Value("${shipping.workEndTime}")
     private String workEndTime;
 
     public float getMaxPrice() {
