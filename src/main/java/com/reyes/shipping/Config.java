@@ -2,6 +2,9 @@ package com.reyes.shipping;
 
 import com.reyes.shipping.cargoDomain.entities.CargoConfig;
 import com.reyes.shipping.scheduleDomain.valueObjects.DeliveryConfig;
+import com.reyes.shipping.scheduleDomain.valueObjects.DeliveryConfigInterface;
+import com.reyes.shipping.scheduleDomain.valueObjects.DeliveryConfigOptional;
+import com.reyes.shipping.scheduleDomain.valueObjects.DeliveryConfigSecondary;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -13,14 +16,21 @@ import java.util.List;
 public class Config {
 
     @Bean
-    @Primary
-    DeliveryConfig deliveryConfig() {
+    //@Primary
+    DeliveryConfigInterface deliveryConfig() {
         return new DeliveryConfig();
     }
 
     @Bean
-    DeliveryConfig deliveryConfiginitialized() {
-        return new DeliveryConfig(1000, "6:00", "12:00");
+    DeliveryConfigInterface deliveryConfigSecondary() {
+        DeliveryConfigSecondary config = new DeliveryConfigSecondary();
+        config.setWorkStartTime("6:00");
+        return config;
+    }
+
+    @Bean
+    DeliveryConfigInterface deliveryConfigOptional() {
+        return new DeliveryConfigOptional();
     }
 
     @Bean(destroyMethod = "myDestroy", initMethod = "myInit")

@@ -2,11 +2,9 @@ package com.reyes.shipping.scheduleDomain.valueObjects;
 
 import org.springframework.beans.factory.annotation.Value;
 
-import java.util.List;
+public class DeliveryConfigOptional extends DeliveryConfigInterface {
 
-public class DeliveryConfig extends DeliveryConfigInterface {
-
-    @Value("DeliveryConfig")
+    @Value("DeliveryConfigOptional")
     private String name;
 
     public String getName() {
